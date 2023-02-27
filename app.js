@@ -3,7 +3,7 @@ async function displayQuote() {
 
   try {
     // Fetch quote object from API
-    let response = await fetch('/api/quote');
+    let response = await fetch('/api/quote/index.js');
     quote = await response.json();
 
     // Preload image
