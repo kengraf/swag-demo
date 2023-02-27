@@ -12,29 +12,16 @@ const quotes = [
   'Stay positive; stay hopeful'
 ];
 
-async function getImage() {
-  return new Promise((resolve, reject) => {
-    https.get(unplashApi, (response) => {
-      // API returns a HTTP 302 code, we only want the final image URL
-      resolve(response.headers.location);
-    }).on('error', (error) => {
-      reject(error.message);
-    });
-  });
-}
-
 async function displayQuote() {
   let quote;
-  let text;
 
   try {
     // Fetch quote object from API
     const image = await fetch(unplashApi);
     const imageURL = image.headers.location;
-    text = quotes[Math.floor(Math.random() * quotes.length)];
     
     // Preload image
-    response = await fetch(image.url);
+    response = await fetch(imageURL);
     const iblob = await response.blob()
     quote.image = URL.createObjectURL(iblob);
   } catch (error) {
@@ -46,7 +33,7 @@ async function displayQuote() {
 
   // Update text
   const div = document.getElementById('quote');
-  div.textContent = text;
+  div.textContent = quotes[Math.floor(Math.random() * quotes.length)];
 }
 
 displayQuote();
