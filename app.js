@@ -13,7 +13,7 @@ const quotes = [
 ];
 
 async function displayQuote() {
-  let quote;
+  let quoteImage;
 
   try {
     // Fetch quote object from API
@@ -22,13 +22,13 @@ async function displayQuote() {
     // Preload image
     response = await fetch(image.url);
     const iblob = await response.blob()
-    quote.image = URL.createObjectURL(iblob);
+    quoteImage = URL.createObjectURL(iblob);
   } catch (error) {
     quote = { text: `Could not get image: ${error.message}` };
   }
 
   // Update background image
-  document.body.style.background = quote.image ? `url(${quote.image}) center / cover` : '#f43';
+  document.body.style.background = quoteImage ? `url(${quoteImage}) center / cover` : '#f43';
 
   // Update text
   const div = document.getElementById('quote');
