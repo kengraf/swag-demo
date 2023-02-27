@@ -29,14 +29,12 @@ async function displayQuote() {
 
   try {
     // Fetch quote object from API
-    const image = await getImage();
+    const image = await fetch(unplashApi);
+    const imageURL = image.headers.location;
     text = quotes[Math.floor(Math.random() * quotes.length)];
     
-    let response = await fetch('/api/quote');
-    quote = await response.json();
-
     // Preload image
-    response = await fetch(quote.image);
+    response = await fetch(unplashApi);
     const iblob = await response.blob()
     quote.image = URL.createObjectURL(iblob);
   } catch (error) {
