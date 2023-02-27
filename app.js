@@ -5,13 +5,22 @@ async function displayQuote() {
     // Fetch quote object from API
     let response = await fetch('/api/quote');
     quote = await response.json();
-
+  } catch (error) {
+    quote = { text: `Could not get quote: ${error.message}` };
+  }
+  
+  try {
     // Preload image
     response = await fetch(quote.image);
     const image = await response.blob()
+  } catch (error) {
+    quote = { text: `Could not get quote image: $(quote.image}` };
+  }
+  
+  try {
     quote.image = URL.createObjectURL(image);
   } catch (error) {
-    quote = { text: `Could not get quote: ${error.message}` };
+    quote = { text: `Could not get quote2: ${error.message}` };
   }
 
   // Update background image
