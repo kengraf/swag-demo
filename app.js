@@ -13,14 +13,9 @@ async function displayQuote() {
     // Preload image
     response = await fetch(quote.image);
     const image = await response.blob()
-  } catch (error) {
-    quote = { text: `Could not get quote image: $(quote.image}` };
-  }
-  
-  try {
     quote.image = URL.createObjectURL(image);
   } catch (error) {
-    quote = { text: `Could not get quote2: ${error.message}` };
+    quote = { text: `Could not get image: ${error.message}` };
   }
 
   // Update background image
