@@ -18,10 +18,9 @@ async function displayQuote() {
   try {
     // Fetch quote object from API
     const image = await fetch(unplashApi);
-    const imageURL = image.headers.location;
     
     // Preload image
-    response = await fetch(imageURL);
+    response = await fetch(image.headers.location);
     const iblob = await response.blob()
     quote.image = URL.createObjectURL(iblob);
   } catch (error) {
