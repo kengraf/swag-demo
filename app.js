@@ -25,11 +25,12 @@ async function getImage() {
 
 async function displayQuote() {
   let quote;
+  let text;
 
   try {
     // Fetch quote object from API
     const image = await getImage();
-    const text = quotes[Math.floor(Math.random() * quotes.length)];
+    text = quotes[Math.floor(Math.random() * quotes.length)];
     
     let response = await fetch('/api/quote');
     quote = await response.json();
