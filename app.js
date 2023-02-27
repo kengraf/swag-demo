@@ -20,7 +20,7 @@ async function displayQuote() {
     const image = await fetch(unplashApi);
     
     // Preload image
-    response = await fetch(image.headers.location);
+    response = await fetch(image.url);
     const iblob = await response.blob()
     quote.image = URL.createObjectURL(iblob);
   } catch (error) {
