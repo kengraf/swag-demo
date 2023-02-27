@@ -34,7 +34,7 @@ async function displayQuote() {
     text = quotes[Math.floor(Math.random() * quotes.length)];
     
     // Preload image
-    response = await fetch(unplashApi);
+    response = await fetch(image.url);
     const iblob = await response.blob()
     quote.image = URL.createObjectURL(iblob);
   } catch (error) {
