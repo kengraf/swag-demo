@@ -25,6 +25,10 @@ const quotes = [
   'Write it on your heart that every day is the best day in the year.',
   'Hold up your head! You were not made for failure, you were made for victory.',
   'If you have good thoughts they will shine out of your face like sunbeams and you will always look lovely.'
+  'You are beatiful.',
+  'Your smile is infectious',
+  'Be kind to someone today',
+  'Being kind is contagious'
 
 ];
 
