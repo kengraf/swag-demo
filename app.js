@@ -1,4 +1,4 @@
-const unplashApi = 'https://source.unsplash.com/1600x900?dream';
+const unsplashApi = 'https://source.unsplash.com/1600x900?dream';
 const quotes = [
   'Wherever you go, no matter what the weather, always bring your own sunshine.',
   'You\’re awesome.',
@@ -37,7 +37,7 @@ async function displayQuote() {
 
   try {
     // Fetch quote object from API
-    const image = await fetch(unplashApi);
+    const image = await fetch(unsplashApi);
     
     // Preload image
     response = await fetch(image.url);
