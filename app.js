@@ -1,4 +1,4 @@
-const unsplashApi = 'https://source.unsplash.com/1600x900?dream';
+const unsplashApi = 'https://source.unsplash.com/1600x900?new&zealand&nature';
 const quotes = [
   'Wherever you go, no matter what the weather, always bring your own sunshine.',
   'You\’re awesome.',
