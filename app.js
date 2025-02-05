@@ -47,7 +47,7 @@ async function displayQuote() {
   }
 
   // Update background image
-  quoteImage = '/wallpaper.png';
+  quoteImage = '/wanaka-tree.jpg';
   document.body.style.background = quoteImage ? `url(${quoteImage}) center / cover` : '#f43';
 
   // Update text
