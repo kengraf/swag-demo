@@ -1,4 +1,3 @@
-const unsplashApi = 'https://api.unsplash.com/photos/random';
 const quotes = [
   'Wherever you go, no matter what the weather, always bring your own sunshine.',
   'You\’re awesome.',
@@ -48,6 +47,7 @@ async function displayQuote() {
   }
 
   // Update background image
+  quoteImage = '/wallpaper.png';
   document.body.style.background = quoteImage ? `url(${quoteImage}) center / cover` : '#f43';
 
   // Update text
