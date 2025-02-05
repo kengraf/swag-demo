@@ -32,22 +32,7 @@ const quotes = [
 ];
 
 async function displayQuote() {
-  let quoteImage;
-
-  try {
-    // Fetch quote object from API
-    const image = await fetch(unsplashApi);
-    
-    // Preload image
-    response = await fetch(image.url);
-    const iblob = await response.blob()
-    quoteImage = URL.createObjectURL(iblob);
-  } catch (error) {
-    quote = { text: `Could not get image: ${error.message}` };
-  }
-
-  // Update background image
-  quoteImage = '/wanaka-tree.jpg';
+  let quoteImage = '/wanaka-tree.jpg';
   document.body.style.background = quoteImage ? `url(${quoteImage}) center / cover` : '#f43';
 
   // Update text
