@@ -1,4 +1,4 @@
-const unsplashApi = 'https://source.unsplash.com/photo/random';
+const unsplashApi = 'https://source.unsplash.com/photos/random';
 const quotes = [
   'Wherever you go, no matter what the weather, always bring your own sunshine.',
   'You\’re awesome.',
